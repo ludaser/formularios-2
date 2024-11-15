@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tipos de Inputs</h1>
+    <form action="procesa.php"> <!-- Recordar que el "action" va al archivo que va a recibir los datos, que suele ser un .php-->
+    <fieldset> <!--El nombre de fieldset se establece con la etiqueta legend-->
+   <legend>Datos Personales</legend>
+        <p>  <!--Debemos saber que los inputs de los formularios son elementos de linea. Esto quiere decir
+        que por defecto aparecer unos a continuación de otros. Si quiero que aparezcan unos debajo otro los meto por ejemplo
+        dentro de un párrafo ( p ) que es un elemento de bloque y aparecen unos debajo de otros -->
+        <label for="nom">Nombre:</label>   <!--No obligatorio pero MUY RECOMENDABLE ponerle la etique LABEL a la etiqueta que va delante e los campos.
+        Y vincularlos con el atributo for del label y el atributo id del input-->
+        <input type="text" maxlength="6"
+        name="nombre" required
+        placeholder="Escriba su nombre completo"
+        id="nom">  <!-- Eso de Placeholder hace que aparezca un texto de ayuda que desaparece cuando vas a escribir algo-->
+    </p>
+    <p>
+        <label for="pob">Población:</label> <!-- De esta manera, en el cuadro saldrá de por defecto Alcázar de San Juan, obv lo podemos modificar si queremos -->
+        <input type="text" value="Alcázar de San Juan" maxlength="50"
+        name="pob" autofocus
+        id="pob"> <!-- value equivale al valor inicial -->
+    </p>
+    <p>
+        <label for="contra">Constraseña:</label>
+        <input type="password" maxlength="6" minlength="4"
+        name="contra"
+        id="contra">
+    </p>
+    <p>
+        <label for="hombre">Hombre:</label>
+        <input type="radio" value="H"  
+        checked id="hombre" name="genero">
+        <label for="mujer">Mujer:</label>  <!-- Atributo checked para establecer el valor inicial de un checkbox o un botón de radio a checked-->
+        <input type="radio" value="M"
+        id="mujer" name="genero">
+    </p>
+    <p>
+        <label for="fumador">Fumador:</label> <!-- Si quisiéramos que de inicio estuviera marcada la casilla que haber puesto el atributo checked (ej, "fumador" checked>), así como hicimos en el botón de radio-->
+        <input type="checkbox" name="Fuma"
+        id="fumador">
+        
+    </p>
+</fieldset> <!-- Pondré los botones de envío de datos (submit) y de reinicio de formulario (reset)-->
+<p> 
+    <label for="prov">Provincia:</label>
+    <select name="prov" id="prov">
+    <option value="cr">Ciudad Real</option> <!-- Cada una de las opcciones de la lista desplegable se indican con la etiqueta <option>-->
+    <option value="al">Albacete</option>
+    <option value="cu">Cuenca</option>
+    <option value="gu">Guadalajara</option> 
+    <option value="to"selected>Toledo</option> <!-- Si quiero marcar una opción como la inicial le pongo el atributo "selected" // y por defecto aparecerá Toledo-->
+    </select>
+    <p>
+        <label for="Observaciones:"></label>
+        <textarea name="Obs" id="Obs"
+        cols="10" rows="6"> 
+        Escriba algo...
+        </textarea>
+    </p>
+    <p>
+        <label for="color">Color:</label> <!-- Sirve para seleccionar un color, lo devuelve en formato RGB-->
+        <input type="color" name="color"
+        id="color">
+    </p>
+    <p>
+        <label for="fecha">Fecha de Nacimiento:</label>
+        <input type="date" name="fecha-nac"
+        id="fecha-nac">
+    </p>
+    <p>
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad"
+        id="edad" min="0" max="100"> <!-- Valores útiles como estos de min y max, para que el valor esté entre medias como es en este caso 0-100-->
+    </p>
+    <p>
+        <label for="email">Email:</label>
+        <input type="email" name="email"
+        id="email">
+    </p>
+    <p>
+        <label for="foto">Adjuntar foto:</label> <!-- Aparece botón para seleccionar foto/archivo-->
+        <input type="file" name="foto"
+        id="foto">
+    </p>
+</p>
+<!-- Botones de envío y reset -->
+<p>
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Reiniciar formulario">
+</p>
+</form>
+</body>
+</html>
